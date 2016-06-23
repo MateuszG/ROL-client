@@ -1,0 +1,52 @@
+# Created by https://www.gitignore.io
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+
+# Sphinx documentation
+docs/_build/
+
+*.sqlite3
+static/static_root/
+
+# chached images
+static/media/cache/
+static/media/items/
+static/media/documents/
+
+ver.txt
+
+.git
+node_modules
+.settings
+*.log
+bundle.js
+bundle.js.map
+bower_components
+
+static
+*.sql

@@ -1,0 +1,73 @@
+<!--if you'd like to have the navbar and or header on every page, move it up a level to app.html!-->
+<navbar></navbar>
+<header>
+  <ask></ask>
+</header>
+<main>
+  <div>
+    <!-- <h1>you can find me in {{ vm.name }}.html</h1> -->
+
+
+<!-- <table>
+  <thead>
+  <tr>
+    <th width="200">Runs on Linux?</th>
+    <th width="150">Category</th>
+    <th width="600">Name</th>
+    <th width="200">Native Platforms</th>
+    <th width="150">WINE status</th>
+  </tr>
+  </thead>
+  <tbody>
+    {% for object in object_list %}
+
+    <tr>
+      <td class='{{ object.general_grade|general_status_filter }}'>
+        <a href="{{ object.get_absolute_url }}">
+          {{ object.general_status }}
+        </a>
+      </td>
+
+      <td style="border-right: 0;" width="40">
+        <a href="{{ object.get_absolute_url }}">
+          {{ object.get_category_display }}
+        </a>
+      </td>
+
+      <td>
+        <a href="{{ object.get_absolute_url }}">
+          {{ object.name }}
+        </a>
+      </td>
+
+      <td style="border-left: 0;">
+        <a href="{{ object.get_absolute_url }}">
+          {% include 'platforms.html' %}
+        </a>
+      </td>
+      <td>
+        <a href="{{ object.get_absolute_url }}">
+        {{ object.wine_status }}
+        </a>
+      </td>
+
+    </tr>
+
+    {% endfor %}
+    </tbody>
+</table> -->
+
+<!-- <div class="maincontainer">
+  {% if object.linux %}
+     <img src="{% static 'img/platforms/tux_small.png' %}"></img>
+  {% endif %}
+  {% if object.windows %}
+     <img src="{% static 'img/platforms/windows_small.png' %}"></img>
+  {% endif %}
+  {% if object.mac %}
+     <img src="{% static 'img/platforms/mac_small.png' %}"></img>
+  {% endif %}
+</div> -->
+
+  </div>
+</main>

@@ -1,0 +1,65 @@
+<div data-ng-init="init()">
+  <img src="img/migrate.png">
+  <form>
+    <label for='ask' ><h1>Check out what "Run on Linux" (beta)</h1>
+      <input type="text" placeholder="Enter program/game name (minimum 3 characters)" ng-model="title" ng-model-options="{ debounce: 1000 }" ng-change="search(title)"  name='ask' required="required" />
+    </label>
+  </form>
+  </ul>
+  <div ng-switch="results">
+    <div ng-switch-when="true">
+      <table>
+        <thead>
+          <tr>
+            <th width="150">Runs?</th>
+            <th width="150">Category</th>
+            <th width="700">Name</th>
+            <th width="150">Native Platform</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="program in programs | filter:query | orderBy:orderProp">
+            <td>
+              <a ui-sref="detail_slash({title: program.slug, titleID: program.id})">
+                <ul class="icon-list left">
+                  <li ng-repeat="icon in program.general_status | run_icons">
+                    <img ng-src='img/runs/{{icon}}_small.png'></img>
+                  </li>
+                </ul>
+              </a>
+            </td>
+            <td>
+              <a ui-sref="detail_slash({title: program.slug, titleID: program.id})">
+                  <span>{{program.category_name}}</span>
+              </a>
+            </td>
+            <td>
+              <a ui-sref="detail_slash({title: program.slug, titleID: program.id})">
+                  <span>{{program.name}}</span>
+              </a>
+            </td>
+            <td>
+              <a ui-sref="detail_slash({title: program.slug, titleID: program.id})">
+                <div platforms os="program.platforms"></div>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row">
+        <div class="large-6 medium-6 columns">
+          <h6><i>{{programs.length}} results</i></h6>
+        </div>
+        <div class="large-6 medium-6 columns">
+          <ul class="inline-list right">
+            <li>
+              <a class="twitter_button footer_button" a href='/#/find/{{title}}'>Get results link</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div ng-switch-default>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,126 @@
+<div data-ng-init="init()">
+  <div ng-switch="results">
+    <div ng-switch-when="true">
+      <h1>{{program.name}}</h1>
+      <table>
+        <thead>
+        <tr>
+          <th width="300">App ID</th>
+          <th width="700">{{program.id}}</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span>Category name</span>
+            </td>
+            <td>
+              <span>{{program.category_name}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>General status</span>
+            </td>
+            <td>
+              <ul class="icon-list left ico_footer">
+                <li ng-repeat="icon in program.general_status | run_icons">
+                  <img ng-src='img/runs/{{icon}}_small.png'></img>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>Native platform</span>
+            </td>
+            <td>
+              <div platforms os="program.platforms"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>Last update</span>
+            </td>
+            <td>
+              <span>{{program.updated | date:'medium'}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>Refresh request</span>
+            </td>
+            <td>
+              <div ng-switch="refresh">
+                <div ng-switch-when="true">
+                  <ul class="icon-list left ico_footer">
+                    <li>
+                      <a class="twitter_button footer_button" ng-click="makeRefresh()">Refresh data</a>
+                    </li>
+                  </ul>
+                </div>
+                <div ng-switch-when="false">
+                  <span>In proccess...</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Linux compatibility</h2>
+      <hr>
+      <h3>WineHQ.org</h3>
+        <table>
+          <thead>
+          <tr>
+            <th width="300">Version</th>
+            <th width="300">Status</th>
+            <th width="400">Wine version</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="version in program.wine_info.wine.versions">
+              <td>
+                <span>{{version.name}}</span>
+              </td>
+              <td>
+                <span>{{version.status}}</span>
+              </td>
+              <td class=''>
+                <span>{{version.wine}}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h2>Sources</h2>
+        <hr>
+        <table>
+          <thead>
+          <tr>
+            <th width="300">Service</th>
+            <th width="300">Last update</th>
+            <th width="400">Native platform</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="service in program.services">
+              <td>
+                <a href="{{service.url}}">
+                  <span>{{service.service_name}}</span>
+                </a>
+              </td>
+              <td>
+                <a href="{{service.url}}">
+                  <span>{{service.updated | date:'medium'}}</span>
+                </a>
+              </td>
+              <td>
+                <div platforms os="service.platforms"></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <div ng-switch-default>
+    </div>
+  </div>
+</div>

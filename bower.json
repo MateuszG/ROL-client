@@ -1,0 +1,25 @@
+{
+  "name": "ROL",
+  "version": "0.0.1",
+  "homepage": "No",
+  "authors": [
+    "Mateusz Gałganek <mateusz.maciej.galganek@gmail.com>"
+  ],
+  "description": "None",
+  "license": "No",
+  "directory": "client/bower_components/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fontawesome": "~4.3.0",
+    "foundation": "~5.5.2",
+    "jquery": "~2.1.4",
+    "foundation-icon-fonts": "*",
+    "moment": "~2.10.3"
+  }
+}
