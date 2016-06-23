@@ -2,11 +2,11 @@
 ## Installation
 
 ### Frontend
-#### Dependencies:
+#### System:
 ```
 sudo npm install -g gulp npm-check-updates
 ```
-#### Environment:
+#### Dependencies:
 ```
 npm i
 bower i
